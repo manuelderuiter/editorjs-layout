@@ -1,6 +1,6 @@
 {
-  "name": "editorjs-layout",
-  "version": "1.2.6",
+  "name": "@manuelderuiter/editorjs-layout",
+  "version": "1.2.5",
   "description": "Layout block tool for Editor.js. ",
   "keywords": [
     "codex editor",
@@ -9,13 +9,13 @@
     "layout",
     "tool"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "bugs": {
     "url": "https://github.com/manuelderuiter/editorjs-layout/issues"
   },
-  "repository": "https://github.com/manuelderuiter/editorjs-layout.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelderuiter/editorjs-layout.git"
+  },
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/hata6502"

@@ -1,0 +1,44 @@
+name: Create a new release and a publish to GitHub Package Registry
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - 'main'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v4
+
+            -   uses: actions/setup-node@v3
+                with:
+                    node-version: 18
+            -   run: npm ci
+            -   run: npm test
+
+    publish-gpr:
+        needs: build
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            packages: write
+        steps:
+            -   uses: actions/checkout@v4
+            -   uses: actions/setup-node@v3
+                with:
+                    node-version: 18
+                    registry-url: https://registry.npmjs.org
+
+            -   run: |
+                    git config --global user.name "${{ github.actor }}"
+                    git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+                    npm ci && npm run build
+                    npm version patch
+                    git push origin --follow-tags
+                    npm publish --access public
+                    gh release create
+                env:
+                    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
