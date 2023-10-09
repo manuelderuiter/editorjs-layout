@@ -1,6 +1,6 @@
 {
   "name": "editorjs-layout",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Layout block tool for Editor.js. ",
   "keywords": [
     "codex editor",
@@ -9,10 +9,13 @@
     "layout",
     "tool"
   ],
-  "bugs": {
-    "url": "https://github.com/hata6502/editorjs-layout/issues"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
-  "repository": "https://github.com/hata6502/editorjs-layout",
+  "bugs": {
+    "url": "https://github.com/manuelderuiter/editorjs-layout/issues"
+  },
+  "repository": "https://github.com/manuelderuiter/editorjs-layout.git",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/hata6502"

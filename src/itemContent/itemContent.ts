@@ -25,7 +25,7 @@ const renderItemContent = ({
 }: RenderItemContentProps) => {
   const editorJSHolderID = uuidv4();
   const wrapper = document.createElement("div");
-
+  wrapper.classList.add('editorjs-item-container');
   wrapper.id = editorJSHolderID;
 
   if (readOnly) {

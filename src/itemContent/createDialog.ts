@@ -14,16 +14,12 @@ const createDialog = ({
   onClose?: (event: { editorJSData: OutputData }) => void;
 }) => {
   const dialog = document.createElement("dialog");
+  dialog.classList.add('editorjs-layout-container');
 
-  dialog.style.maxWidth = "960px";
-  // Make be not able to click inner
-  dialog.style.padding = "0";
-  dialog.style.width = "calc(100% - 64px)";
-
-  const editorJSHolder = document.createElement("div");
   const editorJSHolderID = uuidv4();
-
+  const editorJSHolder = document.createElement("div");
   editorJSHolder.id = editorJSHolderID;
+  editorJSHolder.classList.add('editorjs-holder');
 
   dialog.append(editorJSHolder);
 
