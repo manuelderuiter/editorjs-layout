@@ -53,10 +53,6 @@ class LayoutBlockTool implements BlockTool {
     return true;
   }
 
-  static get shortcut() {
-    return "CMD+L";
-  }
-
   static get toolbox() {
     return {
       icon: `
